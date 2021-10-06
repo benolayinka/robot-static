@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en" class="h-100">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<title>Good Robot</title>
+
+		<!-- Bootstrap core CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+		<!--
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Snowstorm/20131208/snowstorm-min.js"></script>
+		Snow lol -->
+
+		<script src="https://unpkg.com/uuid@latest/dist/umd/uuidv4.min.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.4.0/socket.io.min.js" integrity="sha512-gfppNkmmwLyyV/BXmzS9uWWbjxe0owp9N3wx9NeGmIHkFOiRM0EMmQte753JyYZd9uzIbjuSqPOvME0SvADXhw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/nipplejs/0.9.0/nipplejs.min.js" integrity="sha512-7PRZndBOTMkYqbGwO6dvNDozKEwaJYu3zPLoLv0rzOLMPQ2PVh6yaevCZOUL8+/n+A16fnLYEBKAlYXgMBn54w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/6.1.4/adapter.min.js"></script>
+		<script src="js/index.js" type="module"></script>
+
+		<!-- Custom styles for this template -->
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+	<body class="d-flex h-100 text-center">
+		
+		<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+			<header class="mb-auto">
+				<div>
+					<h3 class="float-md-start mb-0"><img src="img/egghead.png"></h3>
+				</div>
+			</header>
+
+			<main id="hello" class="px-3">
+				<h1>Hi, I'm Diana!</h1> 
+                <p class="lead">I'm a robot you can drive!</p>
+                <p class="lead"> (click to continue) </p>
+			</main>
+
+			<main id="name" class="px-3">
+				<h1>What's your name?</h1> 
+				<form id=form autocomplete="off">
+					<input type="text" class="name" name="robot" id="inputName" aria-describedby="nameHelp" placeholder="Type here...">
+					<button type="submit" id="startButton" class="btn-naked">start</button>
+				</form>
+			</main>
+
+			<main id="stream" class="position-relative">
+				<div id="video-overlay" class="p-3 mx-auto">
+					<div id="overlay-top" class="mb-auto">
+						<span id="hud" class=""></span>
+						<button id="usersButton">
+							<img src="img/online.svg" />
+						</button>
+						<div id="userList">
+							<ul id="userListElements">
+							</ul>
+	                    </div>
+					</div>
+					<div id="overlay-middle">
+						<a id="requestButton">Touch me to drive for 30 seconds!</a>
+					</div>
+					<div id="overlay-bottom" class="mt-auto"></div>
+				</div>
+				<div id="nipple">
+				</div>
+				<video id="video" muted autoPlay playsInline>
+				</video>
+			</main>
+
+			<main id="goodbye" class="px-3">
+				<h1>That's all, folks! 🎅</h1> 
+                <p class="lead">Thanks for driving! Happy holidays and see you soon!</p>
+                <p class="lead"> 🤖 🎄 </p>
+                <img class="w-25" src="img/christmas.jpg" />
+			</main>
+
+			<footer class="mt-auto">
+				<p class="float-md-start">
+					<span class="rainbow-shadow">Video chat with me at</span><a class="kids-view-link font-weight-bold" target="_blank" href="https://whereby.com/kidscreativeagency">whereby.com/kidscreativeagency</a>!
+				</p>
+				<p class="float-md-end">merry xmas from Diana the robot 👾</p>
+			</footer>
+		</div>		
+	</body>
+</html>

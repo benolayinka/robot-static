@@ -1,0 +1,26 @@
+@font-face {
+    font-family: Apercu;
+    src: url(font/apercu/apercu_regular.otf);
+}
+@font-face {
+    font-family: Apercu;
+    src: url(font/apercu/apercu_bold.otf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: ITC Clearface Pro;
+    src: url(font/itc/itc_clearface_regular.ttf);
+}
+@font-face {
+    font-family: ITC Clearface Pro;
+    src: url(font/itc/itc_clearface_bold.ttf);
+    font-weight: bold;
+}
+
+.font-family-apercu {
+    font-family: "Apercu", sans-serif;
+}
+
+.font-family-clearface {
+    font-family: "ITC Clearface Pro", sans-serif;
+}

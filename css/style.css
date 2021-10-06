@@ -1,0 +1,167 @@
+@import "colors.css";
+@import "rainbow.css";
+@import "fonts.css"
+
+/*
+ * Globals
+ */
+
+/*
+ * Base structure
+ */
+
+html {
+  font-family: "Apercu",sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+  background-color: var(--bg-color);
+}
+
+.cover-container {
+  max-width: 62em;
+}
+
+
+/*
+ * Header
+ */
+
+header img {
+  height: 2em;
+  width: auto;
+}
+
+/*
+ * Body
+ */
+
+video {
+  width: 100%;
+  position: relative;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#nipple {
+  position: absolute;
+  top: 0; 
+  bottom: 0;
+  left: 0; 
+  right: 0;
+}
+
+#video-overlay {
+  position: absolute;
+  top: 0; 
+  bottom: 0;
+  left: 0; 
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  z-index: 9;
+}
+
+#overlay-top {
+  position:  relative;
+}
+
+#hud {
+  color: white;
+  float: left;
+}
+
+#requestButton {
+  padding:0.35em 1.2em;
+  border:0.1em solid #FFFFFF;
+  margin:0 0.3em 0.3em 0;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color:#FFFFFF;
+  text-align:center;
+  transition: all 0.2s;
+}
+
+#requestButton:hover{
+  color:#000000;
+  background-color:#FFFFFF;
+}
+
+#usersButton {
+  float: right;
+  background-color: white!important;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+}
+
+#usersButton img {
+  width: 100%;
+}
+
+#userList {
+  display:none;
+  clear: right;
+  float: right;
+  background-color: white;
+  margin-top: 10px;
+  width: 160px;
+  position: absolute;
+  top: 40px;
+  right: 0;
+}
+
+.btn-naked {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.name {
+  font-family: "ITC Clearface Pro",serif;
+  font-weight: 300;
+  text-align: center;
+  border: 0;
+  border-bottom: 0px solid black;
+  outline: 0;
+  font-size: 5em;
+  color: black;
+  padding: 7px 0;
+  background: transparent;
+  max-width: 100%;
+  margin: 30px 0;
+}
+
+.name:focus {
+  background-color: transparent;
+  border-color: transparent;
+  color: black;
+  background-color: transparent;
+  border-color: transparent;
+  outline: 0;
+  box-shadow: 0 0 0 0;
+}
+
+.name::placeholder{
+  color: black;
+}
+
+.name:focus::placeholder {
+  color: transparent;
+}
