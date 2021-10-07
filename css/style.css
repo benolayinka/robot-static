@@ -87,26 +87,21 @@ ul {
   border:0.1em solid #FFFFFF;
   margin:0 0.3em 0.3em 0;
   border-radius:0.12em;
-  box-sizing: border-box;
-  text-decoration:none;
-  font-family:'Roboto',sans-serif;
   font-weight:300;
-  color:#FFFFFF;
+  background-color:white;
   text-align:center;
-  transition: all 0.2s;
-}
-
-#requestButton:hover{
-  color:#000000;
-  background-color:#FFFFFF;
 }
 
 #usersButton {
   float: right;
-  background-color: white!important;
-  width: 40px;
-  height: 40px;
-  padding: 8px;
+  background-color: white;
+  padding:0.35em 1.2em;
+  border:0.1em solid #FFFFFF;
+  margin:0 0.3em 0.3em 0;
+  border-radius:0.12em;
+  font-weight:300;
+  background-color:#FFFFFF;
+  text-align:center;
 }
 
 #usersButton img {
@@ -123,6 +118,12 @@ ul {
   position: absolute;
   top: 40px;
   right: 0;
+}
+
+#modalText {
+  background-color: white;
+  padding: 1em;
+  border-radius: 0.12em;
 }
 
 .btn-naked {
@@ -164,4 +165,27 @@ ul {
 
 .name:focus::placeholder {
   color: transparent;
+}
+
+.no-select {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.front {
+  border-radius: 10px;
+  border: 2px solid white;
+  box-shadow: 0 0 2px 0 white;
+  color: white;
+  opacity: 1;
+}
+
+.back {
+  border-radius: 10px;
+  border: 2px solid white;
+  box-shadow: 0 0 2px 0 white;
+  color: white;
+  opacity: 0.5;
 }

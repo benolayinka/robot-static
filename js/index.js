@@ -475,7 +475,7 @@ function addNipple(){
         zone: document.getElementById('nipple'),
         mode: 'static',
         position: {left: '50%', top: '50%'},
-        color: 'red',
+        color: 'transparent',
         //size: nippleSize,
         restOpacity: 1,
         fadeTime: 0,

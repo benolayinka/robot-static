@@ -13,6 +13,8 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Snowstorm/20131208/snowstorm-min.js"></script>
 		Snow lol -->
 
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 		<script src="https://unpkg.com/uuid@latest/dist/umd/uuidv4.min.js"></script>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.4.0/socket.io.min.js" integrity="sha512-gfppNkmmwLyyV/BXmzS9uWWbjxe0owp9N3wx9NeGmIHkFOiRM0EMmQte753JyYZd9uzIbjuSqPOvME0SvADXhw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -26,17 +28,33 @@
 		<link href="css/style.css" rel="stylesheet">
 	</head>
 	<body class="d-flex h-100 text-center">
+
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div id="modalText">
+					<img class = "mb-4 w-50" src="img/ben-robot-kids.jpg" />
+                    <p>Diana the robot began as an idea Ben had a long, long time ago, growing up in Ibadan, Nigeria.</p>
+                    <p>Where Ben grew up there's trash EVERYWHERE. You're always walking over plastic bags, kicking over plastic bottles, it's terrible.</p>
+                    <p>As a young computer nerd, Ben thought, why not use robots to clean up all that trash, since people won't?</p>
+                    <p>We are a still a long way away from self-driving trash eating robots, but what if you could give a few minutes to drive a robot and help clean up trash somewhere else in the world?</p>
+                    <p>One day, Diana is gonna get big enough to clean up all the trash in Ibadan, Nigeria, and eventually all over the world.</p>
+                    <p>If you wanna chat about the robot, send Ben an email: <strong className="font-weight-bold">ben@thekids.eu</strong></p>
+				</div>
+			</div>
+		</div>
 		
 		<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 			<header class="mb-auto">
-				<div>
-					<h3 class="float-md-start mb-0"><img src="img/egghead.png"></h3>
-				</div>
+				<h3 class="float-md-start">good robot 👾</h3>
+				<a class="float-md-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
+					learn the story
+				</a>
 			</header>
 
 			<main id="hello" class="px-3">
 				<h1>Hi, I'm Diana!</h1> 
-                <p class="lead">I'm a robot you can drive!</p>
+                <p class="lead">I'm a robot you can drive! When I get bigger, I'm gonna clean trash off the beach!</p>
                 <p class="lead"> (click to continue) </p>
 			</main>
 
@@ -61,11 +79,11 @@
 	                    </div>
 					</div>
 					<div id="overlay-middle">
-						<a id="requestButton">Touch me to drive for 30 seconds!</a>
+						<button type="button" id="requestButton">Touch me to drive for 30 seconds!</button>
 					</div>
 					<div id="overlay-bottom" class="mt-auto"></div>
 				</div>
-				<div id="nipple">
+				<div id="nipple" class="no-select">
 				</div>
 				<video id="video" muted autoPlay playsInline>
 				</video>
@@ -80,9 +98,10 @@
 
 			<footer class="mt-auto">
 				<p class="float-md-start">
-					<span class="rainbow-shadow">Video chat with me at</span><a class="kids-view-link font-weight-bold" target="_blank" href="https://whereby.com/kidscreativeagency">whereby.com/kidscreativeagency</a>!
+					go 
+					<span class="rainbow-shadow">EIT</span>!
 				</p>
-				<p class="float-md-end">merry xmas from Diana the robot 👾</p>
+				<p class="float-md-end">let's clean up the world 🏝</p>
 			</footer>
 		</div>		
 	</body>
