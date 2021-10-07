@@ -11,7 +11,7 @@
  */
 
 html {
-  font-family: "Apercu",sans-serif;
+  font-family: "Roboto",sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
@@ -135,7 +135,6 @@ ul {
 }
 
 .name {
-  font-family: "ITC Clearface Pro",serif;
   font-weight: 300;
   text-align: center;
   border: 0;
