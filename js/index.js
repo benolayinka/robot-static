@@ -308,9 +308,7 @@ function handleSecondsRemaining(message){
 
     //update state when time expires
     if(message.secondsRemaining === 0){
-        state.controlText = controlTexts.AVAILABLE
-        state.controlState = controlStates.AVAILABLE
-        state.activeUserInRoom = null
+        handleAvailable()
     }
 }
 
@@ -409,7 +407,7 @@ function getUsefulJoystickData(evt, data){
         //y axis is flipped, up is negative
         let normalY = Math.trunc (-180 * (data.position.y - centerY) / size)
         return {x:normalX, y:normalY}
-    } else if (evt.type === 'end') {
+    } else {
         return {x:0, y:0}
     }
 }
@@ -480,7 +478,7 @@ function addNipple(){
         restOpacity: 1,
         fadeTime: 0,
     });
-    state.nipple.on('move end', handleDriveJoystick);
+    state.nipple.on('start move end dir plain shown hidden destroyed', handleDriveJoystick);
     console.log(state.nipple)
 }
 
