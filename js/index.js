@@ -40,6 +40,7 @@ function onStartButtonClick(event) {
 		stream.style.display = "block"
         state.name = nameString
     }
+    console.log(state)
 }
 
 form.addEventListener('submit', onStartButtonClick)
@@ -140,6 +141,7 @@ var state = new Proxy(_state, {
 
         if(key==="remoteStream"){
             video.setAttribute("src", value)
+            video.addEventListener("playing", ()=>console.log("Video playing!"))
         }
 
         if(key==="remoteStreamDisconnected" && value===true){
@@ -148,7 +150,7 @@ var state = new Proxy(_state, {
                 if(state.remoteStreamDisconnected){
                     state.haveRemoteStream = false
                 }
-            }, 3000)
+            }, 1000)
         }
 
         if(key==="controlText"){
