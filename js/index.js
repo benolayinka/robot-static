@@ -36,11 +36,23 @@ function onStartButtonClick(event) {
         return
     }
     else {
-    	name.style.display = "none"
-		stream.style.display = "block"
+    	showStreamIfExists()
         state.name = nameString
     }
-    console.log(state)
+}
+
+function showStreamIfExists() {
+    if(state.streamExists){
+        name.style.display = "none"
+        goodbye.style.display = "none"
+		stream.style.display = "block"
+        stream.style.visibility = "visible"
+    } else {
+        name.style.display = "none"
+        goodbye.style.display = "block"
+		stream.style.display = "block"
+        stream.style.visibility = "hidden"
+    }
 }
 
 form.addEventListener('submit', onStartButtonClick)
@@ -105,6 +117,7 @@ var _state = {
         },
     remoteStream: null,
     remoteStreamDisconnected: false,
+    streamExists: false,
     haveRover: false,
     controlState:controlStates.AVAILABLE,
 	controlText:controlTexts.AVAILABLE,
@@ -121,7 +134,7 @@ var _state = {
 var state = new Proxy(_state, {
     set: function (target, key, value) {
 
-        console.log(`State: ${key} set to ${value}`);
+        console.log(`Status: ${key} set to ${value}`);
 
         const oldValue = target[key]
 
@@ -141,16 +154,19 @@ var state = new Proxy(_state, {
 
         if(key==="remoteStream"){
             video.setAttribute("src", value)
-            video.addEventListener("playing", ()=>console.log("Video playing!"))
         }
 
         if(key==="remoteStreamDisconnected" && value===true){
         // Wait for reconnect, then error out
             setTimeout(()=>{
                 if(state.remoteStreamDisconnected){
-                    state.haveRemoteStream = false
+                    state.streamExists = false
                 }
-            }, 1000)
+            }, 3000)
+        }
+
+        if(key==="streamExists"){
+            showStreamIfExists()
         }
 
         if(key==="controlText"){
@@ -225,10 +241,6 @@ function onRemoteStreamCallback(stream) {
         console.debug('StreamView OnRemoteStreamCallback Remote Video Track Found')
         state.remoteStream = window.URL.createObjectURL(stream)
         state.remoteStreamDisconnected = false
-
-        //video resizes window, so render stuff after
-        //this.videoRef.current.addEventListener("playing",
-        //     ()=> { this.setState({remoteStreamPlaying:true}) }, true);
     }
 }
 
@@ -495,6 +507,7 @@ async function init(){
     streamingPluginHandle = await janusAsyncHelper.attachPlugin('janus.plugin.streaming')
     janusAsyncHelper.attachCallback('janus.plugin.streaming', 'onmessage', onMessageCallback)
     janusAsyncHelper.attachCallback('janus.plugin.streaming', 'onremotestream', onRemoteStreamCallback)
+    video.addEventListener("playing", ()=>{state.streamExists=true})
     getRoverFromStream()
     watchStream()
 }
