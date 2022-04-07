@@ -60,6 +60,22 @@ ul {
   right: 0;
 }
 
+#no-stream {
+  visibility: hidden;
+  position: absolute;
+  top: 0; 
+  bottom: 0;
+  left: 0; 
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  z-index: 10;
+  background-color: var(--bg-color);
+}
+
 #video-overlay {
   position: absolute;
   top: 0; 

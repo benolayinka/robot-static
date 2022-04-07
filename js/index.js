@@ -13,6 +13,7 @@ const video = document.getElementById("video")
 const hud = document.getElementById("hud")
 const usersButton = document.getElementById("usersButton")
 const userList = document.getElementById("userList")
+const noStream = document.getElementById("no-stream")
 var userListElements = document.getElementById("userListElements")
 
 hello.style.display = "block"
@@ -36,22 +37,19 @@ function onStartButtonClick(event) {
         return
     }
     else {
+        name.style.display = "none"
+        stream.style.display = "block"
     	showStreamIfExists()
         state.name = nameString
     }
 }
 
 function showStreamIfExists() {
+    console.log("Stream exists: ", state.streamExists)
     if(state.streamExists){
-        name.style.display = "none"
-        goodbye.style.display = "none"
-		stream.style.display = "block"
-        stream.style.visibility = "visible"
+        noStream.style.visibility = "hidden"
     } else {
-        name.style.display = "none"
-        goodbye.style.display = "block"
-		stream.style.display = "block"
-        stream.style.visibility = "hidden"
+		noStream.style.visibility = "visible"
     }
 }
 
