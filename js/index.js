@@ -425,6 +425,7 @@ function getUsefulJoystickData(evt, data){
 }
 
 function handleDriveJoystick(event, data){
+    tooltip.hide()
     handleJoystick('driveJoystick', event, data)
 }
 
@@ -479,8 +480,10 @@ function hideRequestButton(){
     requestButton.style.display = "none"
 }
 
+var tooltip = new bootstrap.Tooltip(document.getElementById('nipple-tooltip'))
 function addNipple(){
     if(state.nipple) return
+    tooltip.show()
     state.nipple = nipplejs.create({
         zone: document.getElementById('nipple'),
         mode: 'static',
@@ -496,6 +499,7 @@ function addNipple(){
 
 function removeNipple(){
     if(!state.nipple) return
+    tooltip.hide()
     state.nipple.destroy()
     state.nipple = null
 }

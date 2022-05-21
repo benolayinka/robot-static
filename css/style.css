@@ -60,6 +60,14 @@ ul {
   right: 0;
 }
 
+#nipple-tooltip {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 1px;
+  width: 1px;
+}
+
 #no-stream {
   visibility: hidden;
   position: absolute;
